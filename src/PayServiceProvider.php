@@ -30,8 +30,6 @@ class PayServiceProvider extends ServiceProvider
                 dirname(__DIR__) . '/config/pay.php' => config_path('pay.php'),
             ], 'config');
         }
-
-
     }
 
     /**
