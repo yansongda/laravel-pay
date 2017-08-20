@@ -1,6 +1,8 @@
 <h1 align="center">Pay</h1>
 
 <p align="center">
+<a href="https://scrutinizer-ci.com/g/yansongda/laravel-pay/?branch=master"><img src="https://scrutinizer-ci.com/g/yansongda/laravel-pay/badges/quality-score.png?b=master" alt="Scrutinizer Code Quality"></a>
+<a href="https://scrutinizer-ci.com/g/yansongda/laravel-pay/build-status/master"><img src="https://scrutinizer-ci.com/g/yansongda/laravel-pay/badges/build.png?b=master" alt="Build Status"></a>
 <a href="https://packagist.org/packages/yansongda/laravel-pay"><img src="https://poser.pugx.org/yansongda/laravel-pay/v/stable" alt="Latest Stable Version"></a>
 <a href="https://packagist.org/packages/yansongda/laravel-pay"><img src="https://poser.pugx.org/yansongda/laravel-pay/downloads" alt="Total Downloads"></a>
 <a href="https://packagist.org/packages/yansongda/laravel-pay"><img src="https://poser.pugx.org/yansongda/laravel-pay/v/unstable" alt="Latest Unstable Version"></a>

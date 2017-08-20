@@ -39,7 +39,7 @@ class PayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(dirname(__DIR__).'/config/pay.php', 'pay');
+        $this->mergeConfigFrom(dirname(__DIR__) . '/config/pay.php', 'pay');
 
         $this->app->singleton(Pay::class, function ($app) {
             return new Pay(config('pay'));
