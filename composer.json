@@ -21,5 +21,12 @@
             "Yansongda\\LaravelPay\\": "src"
         }
     },
+    "extra": {
+        "laravel": {
+            "providers": [
+                "Yansongda\\LaravelPay\\PayServiceProvider"
+            ]
+        }
+    },
     "license": "MIT"
 }
