@@ -25,12 +25,13 @@ Yansongda\LaravelPay\PayServiceProvider::class,
 'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
 ```
 
-
 ### 配置文件
 
 ```shell
 $ php artisan vendor:publish --provider="Yansongda\\LaravelPay\\PayServiceProvider" --tag=config
 ```
+
+随后，请在 `config` 文件夹中完善配置信息。 
 
 ## 使用方法
 
@@ -45,6 +46,8 @@ $order = [
 
 return Pay::driver('alipay')->gateway('web')->pay($order);
 ```
+
+具体方法请传送至 [这里](https://github.com/yansongda/pay)
 
 ## License
 
