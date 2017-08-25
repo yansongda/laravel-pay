@@ -25,7 +25,10 @@
         "laravel": {
             "providers": [
                 "Yansongda\\LaravelPay\\PayServiceProvider"
-            ]
+            ],
+            "aliases": {
+                "Pay": "Yansongda\\LaravelPay\\Facades\\Pay"
+            }
         }
     },
     "license": "MIT"
