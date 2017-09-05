@@ -4,7 +4,6 @@ namespace Yansongda\LaravelPay\Facades;
 
 use Illuminate\Support\Facades\Facade;
 
-
 class Pay extends Facade
 {
     /**
