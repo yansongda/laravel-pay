@@ -2,8 +2,8 @@
 
 namespace Yansongda\LaravelPay;
 
-use Yansongda\Pay\Pay;
 use Illuminate\Support\ServiceProvider;
+use Yansongda\Pay\Pay;
 
 class PayServiceProvider extends ServiceProvider
 {
@@ -16,18 +16,18 @@ class PayServiceProvider extends ServiceProvider
 
     /**
      * boot a service.
-     * 
+     *
      * @author yansongda <me@yansongda.cn>
-     * 
+     *
      * @version 2017-08-20
-     * 
-     * @return  [type]     [description]
+     *
+     * @return [type] [description]
      */
     public function boot()
     {
         if (!file_exists(config_path('pay.php'))) {
             $this->publishes([
-                dirname(__DIR__) . '/config/pay.php' => config_path('pay.php'),
+                dirname(__DIR__).'/config/pay.php' => config_path('pay.php'),
             ], 'config');
         }
     }
@@ -39,7 +39,7 @@ class PayServiceProvider extends ServiceProvider
      */
     public function register()
     {
-        $this->mergeConfigFrom(dirname(__DIR__) . '/config/pay.php', 'pay');
+        $this->mergeConfigFrom(dirname(__DIR__).'/config/pay.php', 'pay');
 
         $this->app->singleton(Pay::class, function ($app) {
             return new Pay(config('pay'));
