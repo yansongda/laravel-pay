@@ -13,6 +13,26 @@ class Pay extends Facade
      */
     public static function getFacadeAccessor()
     {
-        return 'pay';
+        return 'pay.alipay';
+    }
+
+    /**
+     * Return the facade accessor.
+     *
+     * @return string
+     */
+    public static function alipay()
+    {
+        return 'pay.alipay';
+    }
+
+    /**
+     * Return the facade accessor.
+     *
+     * @return string
+     */
+    public static function wechat()
+    {
+        return 'pay.wechat';
     }
 }
