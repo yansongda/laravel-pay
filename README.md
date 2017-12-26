@@ -14,7 +14,7 @@
 ## 安装
 
 ```shell
-$ composer require "yansongda/laravel-pay:^2.0"
+$ composer require yansongda/laravel-pay
 ```
 
 ### 添加 service provider（< laravel 5.5 || lunmen）
