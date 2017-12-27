@@ -20,7 +20,11 @@ $ composer require yansongda/laravel-pay
 ### 添加 service provider（< laravel 5.5 || lunmen）
 
 ```php
+// laravel < 5.5
 Yansongda\LaravelPay\PayServiceProvider::class,
+
+// lumen
+$app->register(Yansongda\LaravelPay\PayServiceProvider::class);
 ```
 
 ### 添加 alias（< laravel 5.5）
@@ -32,13 +36,16 @@ Yansongda\LaravelPay\PayServiceProvider::class,
 ### 配置文件
 
 ```shell
-$ php artisan vendor:publish --provider="Yansongda\\LaravelPay\\PayServiceProvider" --tag=config
+$ php artisan vendor:publish --provider="Yansongda\\LaravelPay\\PayServiceProvider" --tag=laravel-pay
 ```
+
+**lumen 用户请手动复制**
 
 随后，请在 `config` 文件夹中完善配置信息。 
 
 ## 使用方法
 
+### 支付宝
 ```php
 use Pay;
 
@@ -49,9 +56,27 @@ $order = [
 ];
 
 return Pay::alipay()->web($order);
+
+// 下面这个方法也可以
+// return Pay::web($order);
 ```
 
-具体方法请传送至 [这里](https://github.com/yansongda/pay)
+### 微信
+```php
+use Pay;
+
+$order = [
+    'out_trade_no' => time(),
+    'body' => 'subject-测试',
+    'total_fee'      => '1',
+    'openid' => 'onkVf1FjWS5SBIixxxxxxxxx',
+];
+
+$result = Pay::wechat()->mp($order);
+
+```
+
+具体使用说明请传送至 [这里](https://github.com/yansongda/pay)
 
 ## License
 
