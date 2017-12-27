@@ -23,19 +23,20 @@ class PayServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        if (!file_exists(config_path('pay.php'))) {
-            if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
-                $this->publishes([
-                    dirname(__DIR__).'/config/pay.php' => config_path('pay.php'),
-                ], 'laravel-pay');
-            } elseif ($this->app instanceof LumenApplication) {
-                $this->app->configure('pay');
-            }
+        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+            $this->publishes([
+                dirname(__DIR__).'/config/pay.php' => config_path('pay.php')],
+                'laravel-pay'
+            );
+        } elseif ($this->app instanceof LumenApplication) {
+            $this->app->configure('pay');
         }
     }
 
     /**
      * Regist the service.
+     *
+     * @author yansongda <me@yansongda.cn>
      *
      * @return void
      */
@@ -49,5 +50,17 @@ class PayServiceProvider extends ServiceProvider
         $this->app->singleton('pay.wechat', function () {
             return Pay::wechat(config('pay.wechat'));
         });
+    }
+
+    /**
+     * Get services.
+     *
+     * @author yansongda <me@yansongda.cn>
+     *
+     * @return array
+     */
+    public function provides()
+    {
+        return ['pay.alipay', 'pay.wechat'];
     }
 }
