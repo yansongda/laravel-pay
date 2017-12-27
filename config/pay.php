@@ -18,10 +18,10 @@ return [
         'private_key' => '',
 
         // optional，默认 warning；日志路径为：sys_get_temp_dir().'/logs/yansongda.pay.log'
-        // 'log' => [
-        //     'file' => './logs/alipay.log',
+        'log' => [
+            'file' => storage_path('logs/alipay.log'),
         //     'level' => 'debug'
-        // ],
+        ],
 
         // optional，设置此参数，将进入沙箱模式
         // 'mode' => 'dev',
@@ -53,10 +53,10 @@ return [
         'cert_key' => '',
 
         // optional，默认 warning；日志路径为：sys_get_temp_dir().'/logs/yansongda.pay.log'
-        // 'log' => [
-        //     'file' => './logs/wechat.log',
+        'log' => [
+            'file' => storage_path('logs/wechat.log'),
         //     'level' => 'debug'
-        // ],
+        ],
 
         // optional
         // 'dev' 时为沙箱模式
