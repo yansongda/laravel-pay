@@ -27,7 +27,7 @@ class PayServiceProvider extends ServiceProvider
             if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
                 $this->publishes([
                     dirname(__DIR__).'/config/pay.php' => config_path('pay.php'),
-                ], 'config');
+                ], 'laravel-pay');
             } elseif ($this->app instanceof LumenApplication) {
                 $this->app->configure('pay');
             }
@@ -43,10 +43,10 @@ class PayServiceProvider extends ServiceProvider
     {
         $this->mergeConfigFrom(dirname(__DIR__).'/config/pay.php', 'pay');
 
-        $this->app->singleton('pay.alipay', function ($app) {
+        $this->app->singleton('pay.alipay', function () {
             return Pay::alipay(config('pay.alipay'));
         });
-        $this->app->singleton('pay.wechat', function ($app) {
+        $this->app->singleton('pay.wechat', function () {
             return Pay::wechat(config('pay.wechat'));
         });
     }

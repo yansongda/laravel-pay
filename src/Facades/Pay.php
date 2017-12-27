@@ -23,7 +23,7 @@ class Pay extends Facade
      */
     public static function alipay()
     {
-        return 'pay.alipay';
+        return app('pay.alipay');
     }
 
     /**
@@ -33,6 +33,6 @@ class Pay extends Facade
      */
     public static function wechat()
     {
-        return 'pay.wechat';
+        return app('pay.wechat');
     }
 }
