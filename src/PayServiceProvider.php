@@ -25,7 +25,7 @@ class PayServiceProvider extends ServiceProvider
     {
         if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
             $this->publishes([
-                dirname(__DIR__).'/config/pay.php' => config_path('pay.php')],
+                dirname(__DIR__).'/config/pay.php' => config_path('pay.php'), ],
                 'laravel-pay'
             );
         } elseif ($this->app instanceof LumenApplication) {
