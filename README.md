@@ -11,6 +11,12 @@
 
 该文档为 v2.x 版本，如果您想找 v1.x 版本文档，请点击[https://github.com/yansongda/laravel-pay/tree/v1.0.3](https://github.com/yansongda/laravel-pay/tree/v1.0.3)
 
+## 运行环境
+
+- php >= 7.0
+- composer
+- laravel > 5.1
+
 ## 安装
 
 ```shell
