@@ -17,7 +17,7 @@
 $ composer require yansongda/laravel-pay
 ```
 
-### 添加 service provider（< laravel 5.5 || lunmen）
+### 添加 service provider（optional. if laravel < 5.5 || lumen）
 
 ```php
 // laravel < 5.5
@@ -27,7 +27,7 @@ Yansongda\LaravelPay\PayServiceProvider::class,
 $app->register(Yansongda\LaravelPay\PayServiceProvider::class);
 ```
 
-### 添加 alias（< laravel 5.5）
+### 添加 alias（optional. if laravel < 5.5）
 
 ```php
 'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
@@ -76,7 +76,7 @@ $result = Pay::wechat()->mp($order);
 
 ```
 
-具体使用说明请传送至 [这里](https://github.com/yansongda/pay)
+具体使用说明请传送至 [https://github.com/yansongda/pay](https://github.com/yansongda/pay)
 
 ## License
 
