@@ -15,7 +15,7 @@
 
 - php >= 7.0
 - composer
-- laravel >= 5.1
+- laravel || lumen >= 5.1
 
 ## 安装
 
