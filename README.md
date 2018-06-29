@@ -47,11 +47,28 @@ $ php artisan vendor:publish --provider="Yansongda\\LaravelPay\\PayServiceProvid
 
 **lumen 用户请手动复制**
 
-随后，请在 `config` 文件夹中完善配置信息。 
+随后，请在 `config` 文件夹中完善配置信息。
+
+`.env`文件里面配置
+
+```
+// alipay 配置
+ALI_APP_ID=
+ALI_PUBLIC_KEY=
+ALI_PRIVATE_KEY=
+
+// wechat 配置
+WECHAT_APP_ID=
+WECHAT_MINIAPP_ID=
+WECHAT_APPID=
+WECHAT_MCH_ID=
+WECHAT_KEY=
+```
 
 ## 使用方法
 
 ### 支付宝
+
 ```php
 use Pay;
 
@@ -68,6 +85,7 @@ return Pay::alipay()->web($order);
 ```
 
 ### 微信
+
 ```php
 use Pay;
 
