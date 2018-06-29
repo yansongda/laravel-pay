@@ -19,13 +19,13 @@
 
 ## 安装
 
-```shell
+```Shell
 $ composer require yansongda/laravel-pay
 ```
 
 ### 添加 service provider（optional. if laravel < 5.5 || lumen）
 
-```php
+```PHP
 // laravel < 5.5
 Yansongda\LaravelPay\PayServiceProvider::class,
 
@@ -35,13 +35,13 @@ $app->register(Yansongda\LaravelPay\PayServiceProvider::class);
 
 ### 添加 alias（optional. if laravel < 5.5）
 
-```php
+```PHP
 'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
 ```
 
 ### 配置文件
 
-```shell
+```Shell
 $ php artisan vendor:publish --provider="Yansongda\\LaravelPay\\PayServiceProvider" --tag=laravel-pay
 ```
 
@@ -49,9 +49,9 @@ $ php artisan vendor:publish --provider="Yansongda\\LaravelPay\\PayServiceProvid
 
 随后，请在 `config` 文件夹中完善配置信息。
 
-`.env`文件里面配置
+`.env` 文件里面配置
 
-```
+```PHP
 // alipay 配置
 ALI_APP_ID=
 ALI_PUBLIC_KEY=
@@ -69,7 +69,7 @@ WECHAT_KEY=
 
 ### 支付宝
 
-```php
+```PHP
 use Pay;
 
 $order = [
@@ -86,7 +86,7 @@ return Pay::alipay()->web($order);
 
 ### 微信
 
-```php
+```PHP
 use Pay;
 
 $order = [
