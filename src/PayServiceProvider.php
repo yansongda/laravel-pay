@@ -10,7 +10,7 @@ use Yansongda\Pay\Pay;
 class PayServiceProvider extends ServiceProvider
 {
     /**
-     * Determin is defer.
+     * If is defer.
      *
      * @var bool
      */
@@ -34,7 +34,7 @@ class PayServiceProvider extends ServiceProvider
     }
 
     /**
-     * Regist the service.
+     * Register the service.
      *
      * @author yansongda <me@yansongda.cn>
      *
