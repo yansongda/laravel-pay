@@ -9,7 +9,7 @@ class Pay extends Facade
     /**
      * Return the facade accessor.
      *
-     * @return string
+     * @return \Yansongda\Pay\Gateways\Alipay
      */
     public static function getFacadeAccessor()
     {
@@ -19,7 +19,7 @@ class Pay extends Facade
     /**
      * Return the facade accessor.
      *
-     * @return string
+     * @return \Yansongda\Pay\Gateways\Alipay
      */
     public static function alipay()
     {
@@ -29,7 +29,7 @@ class Pay extends Facade
     /**
      * Return the facade accessor.
      *
-     * @return string
+     * @return \Yansongda\Pay\Gateways\Wechat
      */
     public static function wechat()
     {
