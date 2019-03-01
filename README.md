@@ -42,7 +42,7 @@ $app->register(Yansongda\LaravelPay\PayServiceProvider::class);
 ### 配置文件
 
 ```Shell
-$ php artisan vendor:publish --provider="Yansongda\\LaravelPay\\PayServiceProvider" --tag=laravel-pay
+$ php artisan vendor:publish --provider="Yansongda\LaravelPay\PayServiceProvider" --tag=laravel-pay
 ```
 
 **lumen 用户请手动复制**
