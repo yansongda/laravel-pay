@@ -3,6 +3,8 @@
 namespace Yansongda\LaravelPay\Facades;
 
 use Illuminate\Support\Facades\Facade;
+use Yansongda\Pay\Gateways\Alipay;
+use Yansongda\Pay\Gateways\Wechat;
 
 class Pay extends Facade
 {
@@ -19,7 +21,7 @@ class Pay extends Facade
     /**
      * Return the facade accessor.
      *
-     * @return string
+     * @return Alipay
      */
     public static function alipay()
     {
@@ -29,7 +31,7 @@ class Pay extends Facade
     /**
      * Return the facade accessor.
      *
-     * @return string
+     * @return Wechat
      */
     public static function wechat()
     {
