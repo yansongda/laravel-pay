@@ -17,6 +17,13 @@ return [
         // 自己的私钥，签名时使用
         'private_key' => env('ALI_PRIVATE_KEY', ''),
 
+        // 使用公钥证书模式，请配置下面两个参数，同时修改 ali_public_key 为以 .crt 结尾的支付宝公钥证书路径，如（./cert/alipayCertPublicKey_RSA2.crt）
+        // 应用公钥证书路径
+        // 'app_cert_public_key' => './cert/appCertPublicKey.crt',
+
+        // 支付宝根证书路径
+        // 'alipay_root_cert' => './cert/alipayRootCert.crt',
+
         // optional，默认 warning；日志路径为：sys_get_temp_dir().'/logs/yansongda.pay.log'
         'log' => [
             'file' => storage_path('logs/alipay.log'),
