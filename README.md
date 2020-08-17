@@ -52,12 +52,12 @@ $ php artisan vendor:publish --provider="Yansongda\LaravelPay\PayServiceProvider
 `.env` 文件里面配置
 
 ```PHP
-// alipay 配置
+# alipay 配置
 ALI_APP_ID=
 ALI_PUBLIC_KEY=
 ALI_PRIVATE_KEY=
 
-// wechat 配置
+# wechat 配置
 WECHAT_APP_ID=
 WECHAT_MINIAPP_ID=
 WECHAT_APPID=
