@@ -2,20 +2,14 @@
 
 namespace Yansongda\LaravelPay;
 
+use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Foundation\Application as LaravelApplication;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 use Yansongda\Pay\Pay;
 
-class PayServiceProvider extends ServiceProvider
+class PayServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * If is defer.
-     *
-     * @var bool
-     */
-    protected $defer = true;
-
     /**
      * Boot the service.
      *
