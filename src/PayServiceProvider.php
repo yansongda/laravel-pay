@@ -1,9 +1,11 @@
 <?php
 
+declare(strict_types=1);
+
 namespace Yansongda\LaravelPay;
 
 use Illuminate\Contracts\Support\DeferrableProvider;
-use Illuminate\Foundation\Application as LaravelApplication;
+use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
 use Yansongda\Pay\Pay;
@@ -17,12 +19,14 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function boot()
     {
-        if ($this->app instanceof LaravelApplication && $this->app->runningInConsole()) {
+        if ($this->app instanceof Application && $this->app->runningInConsole()) {
             $this->publishes([
                 dirname(__DIR__).'/config/pay.php' => config_path('pay.php'), ],
                 'laravel-pay'
             );
-        } elseif ($this->app instanceof LumenApplication) {
+        }
+
+        if ($this->app instanceof LumenApplication) {
             $this->app->configure('pay');
         }
     }
@@ -32,17 +36,24 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @author yansongda <me@yansongda.cn>
      *
+     * @throws \Yansongda\Pay\Exception\ContainerDependencyException
+     * @throws \Yansongda\Pay\Exception\ContainerException
+     * @throws \Yansongda\Pay\Exception\ServiceNotFoundException
+     *
      * @return void
      */
     public function register()
     {
         $this->mergeConfigFrom(dirname(__DIR__).'/config/pay.php', 'pay');
 
+        Pay::config(config('pay'));
+
         $this->app->singleton('pay.alipay', function () {
-            return Pay::alipay(config('pay.alipay'));
+            return Pay::alipay();
         });
+
         $this->app->singleton('pay.wechat', function () {
-            return Pay::wechat(config('pay.wechat'));
+            return Pay::wechat();
         });
     }
 

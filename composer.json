@@ -13,8 +13,11 @@
         }
     ],
     "require": {
-        "illuminate/support": "^5.1 || ^6.0 || ^7.0 || ^8.0",
-        "yansongda/pay": "^2.0"
+        "laravel/framework": "^8.0",
+        "yansongda/pay": "~3.0.0"
+    },
+    "require-dev": {
+        "laravel/lumen-framework": "^8.0"
     },
     "autoload": {
         "psr-4": {
