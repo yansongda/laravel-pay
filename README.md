@@ -11,7 +11,7 @@
 ## 安装
 
 ```Shell
-$ composer require yansongda/laravel-pay
+$ composer require yansongda/laravel-pay:~3.0.0
 ```
 
 ### 添加 service provider（optional）
