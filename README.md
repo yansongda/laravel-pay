@@ -1,6 +1,6 @@
 <h1 align="center">Pay</h1>
 
-目前 v3 版本为 beta 阶段
+目前 v3 版本为 RC 阶段
 
 ## 运行环境
 
