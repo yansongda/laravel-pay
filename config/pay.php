@@ -44,6 +44,7 @@ return [
             'mch_public_cert_path' => '',
             // 微信公钥证书路径
             'wechat_public_cert_path' => '',
+            'notify_url' => '',
             'mode' => Pay::MODE_NORMAL,
         ],
     ],
