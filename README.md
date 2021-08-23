@@ -1,7 +1,5 @@
 <h1 align="center">Pay</h1>
 
-## 运行环境
-
 - php >= 7.3
 - composer
 - laravel || lumen >= 8.0
@@ -9,7 +7,7 @@
 ## 安装
 
 ```Shell
-$ composer require yansongda/laravel-pay
+$ composer require yansongda/laravel-pay:~3.0.0
 ```
 
 ### 添加 service provider（optional）

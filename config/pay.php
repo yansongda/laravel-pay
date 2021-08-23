@@ -43,7 +43,10 @@ return [
             // 商户公钥证书路径
             'mch_public_cert_path' => '',
             // 微信公钥证书路径
-            'wechat_public_cert_path' => '',
+            'wechat_public_cert_path' => [
+                '' => '',
+            ],
+            'notify_url' => '',
             'mode' => Pay::MODE_NORMAL,
         ],
     ],
@@ -53,7 +56,7 @@ return [
         // 更多配置项请参考 [Guzzle](https://guzzle-cn.readthedocs.io/zh_CN/latest/request-options.html)
     ],
     // optional，默认 warning；日志路径为：sys_get_temp_dir().'/logs/yansongda.pay.log'
-    'log' => [
+    'logger' => [
         'enable' => false,
         'file' => storage_path('logs/alipay.log'),
         'level' => 'debug',
