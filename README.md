@@ -41,7 +41,7 @@ $ php artisan vendor:publish --provider="Yansongda\LaravelPay\PayServiceProvider
 ### 支付宝
 
 ```PHP
-use Pay;
+use Yansongda\LaravelPay\Facades\Pay;
 
 $order = [
     'out_trade_no' => time(),
@@ -58,7 +58,7 @@ return Pay::alipay()->web($order);
 ### 微信
 
 ```PHP
-use Pay;
+use Yansongda\LaravelPay\Facades\Pay;
 
 $order = [
     'out_trade_no' => time(),
