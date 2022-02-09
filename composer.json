@@ -13,7 +13,7 @@
         }
     ],
     "require": {
-        "laravel/framework": "^8.0",
+        "laravel/framework": "^8.0 | ^9.0",
         "yansongda/pay": "~3.0.0"
     },
     "require-dev": {
