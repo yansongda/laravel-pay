@@ -1,5 +1,7 @@
 <h1 align="center">Pay</h1>
 
+## 依赖
+
 - php >= 7.3
 - composer
 - laravel || lumen >= 8.0
@@ -7,34 +9,28 @@
 ## 安装
 
 ```Shell
-$ composer require yansongda/laravel-pay:~3.0.0 -W
+composer require yansongda/laravel-pay:~3.0.0 -W
 ```
 
-### 添加 service provider（optional）
+### laravel 用户
 
-```PHP
-// laravel < 5.5
-Yansongda\LaravelPay\PayServiceProvider::class,
-
-// lumen
-$app->register(Yansongda\LaravelPay\PayServiceProvider::class);
-```
-
-### 添加 alias（optional）
-
-```PHP
-'Pay' => Yansongda\LaravelPay\Facades\Pay::class,
-```
-
-### 配置文件
+#### 配置文件
 
 ```Shell
 $ php artisan vendor:publish --provider="Yansongda\LaravelPay\PayServiceProvider" --tag=laravel-pay
 ```
 
-**lumen 用户请手动复制**
+### lumen 用户
 
-随后，请在 `config` 文件夹中完善配置信息。
+#### 配置文件
+
+请手动复制配置文件
+
+#### service provider
+
+```PHP
+$app->register(Yansongda\LaravelPay\PayServiceProvider::class);
+```
 
 ## 使用方法
 
