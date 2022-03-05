@@ -2,14 +2,14 @@
 
 ## 依赖
 
-- php >= 7.3
+- php >= 7.3 (v3.1.0 开始 >=7.4.0)
 - composer
 - laravel || lumen >= 8.0
 
 ## 安装
 
 ```Shell
-composer require yansongda/laravel-pay:~3.0.0 -W
+composer require yansongda/laravel-pay:~3.1.0
 ```
 
 ### laravel 用户
