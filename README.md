@@ -17,7 +17,7 @@ composer require yansongda/laravel-pay:~3.1.0
 #### 配置文件
 
 ```Shell
-$ php artisan vendor:publish --provider="Yansongda\LaravelPay\PayServiceProvider" --tag=laravel-pay
+php artisan vendor:publish --provider="Yansongda\LaravelPay\PayServiceProvider" --tag=laravel-pay
 ```
 
 ### lumen 用户
