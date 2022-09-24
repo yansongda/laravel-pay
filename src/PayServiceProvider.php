@@ -36,9 +36,7 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
      *
      * @author yansongda <me@yansongda.cn>
      *
-     * @throws \Yansongda\Pay\Exception\ContainerDependencyException
      * @throws \Yansongda\Pay\Exception\ContainerException
-     * @throws \Yansongda\Pay\Exception\ServiceNotFoundException
      *
      * @return void
      */
@@ -55,6 +53,10 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
         $this->app->singleton('pay.wechat', function () {
             return Pay::wechat();
         });
+
+        $this->app->singleton('pay.unipay', function () {
+            return Pay::unipay();
+        });
     }
 
     /**
@@ -66,6 +68,6 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function provides()
     {
-        return ['pay.alipay', 'pay.wechat'];
+        return ['pay.alipay', 'pay.wechat', 'pay.unipay'];
     }
 }

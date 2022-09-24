@@ -45,7 +45,7 @@ return [
             'app_id' => '',
             // 选填-合单 app_id
             'combine_app_id' => '',
-            // 选填-合单商户号 
+            // 选填-合单商户号
             'combine_mch_id' => '',
             // 选填-服务商模式下，子公众号 的 app_id
             'sub_mp_app_id' => '',
@@ -61,6 +61,22 @@ return [
             ],
             // 选填-默认为正常模式。可选为： MODE_NORMAL, MODE_SERVICE
             'mode' => Pay::MODE_NORMAL,
+        ],
+    ],
+    'unipay' => [
+        'default' => [
+            // 必填-商户号
+            'mch_id' => '',
+            // 必填-商户公私钥
+            'mch_cert_path' => '',
+            // 必填-商户公私钥密码
+            'mch_cert_password' => '000000',
+            // 必填-银联公钥证书路径
+            'unipay_public_cert_path' => '',
+            // 必填
+            'return_url' => '',
+            // 必填
+            'notify_url' => '',
         ],
     ],
     'http' => [ // optional
