@@ -9,7 +9,7 @@
 ## 安装
 
 ```Shell
-composer require yansongda/laravel-pay:~3.2.0
+composer require yansongda/laravel-pay:~3.3.0
 ```
 
 ### laravel 用户
