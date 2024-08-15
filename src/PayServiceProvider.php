@@ -8,6 +8,7 @@ use Illuminate\Contracts\Support\DeferrableProvider;
 use Illuminate\Foundation\Application;
 use Illuminate\Support\ServiceProvider;
 use Laravel\Lumen\Application as LumenApplication;
+use Yansongda\Artful\Exception\ContainerException;
 use Yansongda\Pay\Pay;
 
 class PayServiceProvider extends ServiceProvider implements DeferrableProvider
@@ -31,15 +32,14 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
         }
     }
 
-    /**
-     * Register the service.
-     *
-     * @author yansongda <me@yansongda.cn>
-     *
-     * @throws \Yansongda\Pay\Exception\ContainerException
-     *
-     * @return void
-     */
+	/**
+	 * Register the service.
+	 *
+	 * @return void*
+	 * @throws ContainerException
+	 * @author yansongda <me@yansongda.cn>
+	 *
+	 */
     public function register()
     {
         $this->mergeConfigFrom(dirname(__DIR__).'/config/pay.php', 'pay');
@@ -57,6 +57,14 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
         $this->app->singleton('pay.unipay', function () {
             return Pay::unipay();
         });
+
+		$this->app->singleton('pay.douyin', function () {
+			return Pay::douyin();
+		});
+
+		$this->app->singleton('pay.jsb', function () {
+			return Pay::jsb();
+		});
     }
 
     /**
@@ -68,6 +76,6 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
      */
     public function provides()
     {
-        return ['pay.alipay', 'pay.wechat', 'pay.unipay'];
+        return ['pay.alipay', 'pay.wechat', 'pay.unipay', 'pay.douyin', 'pay.jsb'];
     }
 }

@@ -37,7 +37,7 @@ $app->register(Yansongda\LaravelPay\PayServiceProvider::class);
 ### 支付宝
 
 ```PHP
-use Pay;
+use Yansongda\LaravelPay\Facades\Pay;
 
 $order = [
     'out_trade_no' => time(),
@@ -54,7 +54,7 @@ return Pay::alipay()->web($order);
 ### 微信
 
 ```PHP
-use Pay;
+use Yansongda\LaravelPay\Facades\Pay;
 
 $order = [
     'out_trade_no' => time(),
@@ -64,6 +64,43 @@ $order = [
 ];
 
 $result = Pay::wechat()->mp($order);
+
+```
+
+### 抖音支付
+
+```PHP
+use Yansongda\LaravelPay\Facades\Pay;
+
+$order = [
+    'out_order_no' => date('YmdHis').mt_rand(1000, 9999),
+    'total_amount' => 1,
+    'subject' => '闫嵩达 - test - subject - 01',
+    'body' => '闫嵩达 - test - body - 01',
+    'valid_time' => 600,
+    'expand_order_info' => json_encode([
+        'original_delivery_fee' => 15,
+        'actual_delivery_fee' => 10
+    ])
+];
+
+$result = Pay::douyin()->mini($order);
+
+```
+
+
+### 江苏银行(e融支付)
+
+```PHP
+use Yansongda\LaravelPay\Facades\Pay;
+
+$order = [
+    'outTradeNo' => time().'',
+    'proInfo' => 'subject-测试',
+    'totalFee'=> 1,
+];
+
+$result = Pay::jsb()->scan($order);
 
 ```
 
