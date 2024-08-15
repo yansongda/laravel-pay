@@ -6,6 +6,8 @@ namespace Yansongda\LaravelPay\Facades;
 
 use Illuminate\Support\Facades\Facade;
 use Yansongda\Pay\Provider\Alipay;
+use Yansongda\Pay\Provider\Douyin;
+use Yansongda\Pay\Provider\Jsb;
 use Yansongda\Pay\Provider\Wechat;
 
 class Pay extends Facade
@@ -39,4 +41,24 @@ class Pay extends Facade
     {
         return app('pay.wechat');
     }
+
+	/**
+	 * Return the facade accessor.
+	 *
+	 * @return Douyin
+	 */
+	public static function douyin(): Douyin
+	{
+		return app('pay.douyin');
+	}
+
+	/**
+	 * Return the facade accessor.
+	 *
+	 * @return Jsb
+	 */
+	public static function jsb(): Jsb
+	{
+		return app('pay.jsb');
+	}
 }

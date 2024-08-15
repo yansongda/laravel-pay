@@ -79,6 +79,46 @@ return [
             'notify_url' => '',
         ],
     ],
+	'douyin' => [
+		'default' => [
+			// 选填-商户号
+			// 抖音开放平台 --> 应用详情 --> 支付信息 --> 产品管理 --> 商户号
+			'mch_id' => '',
+			// 必填-支付 Token，用于支付回调签名
+			// 抖音开放平台 --> 应用详情 --> 支付信息 --> 支付设置 --> Token(令牌)
+			'mch_secret_token' => '',
+			// 必填-支付 SALT，用于支付签名
+			// 抖音开放平台 --> 应用详情 --> 支付信息 --> 支付设置 --> SALT
+			'mch_secret_salt' => '',
+			// 必填-小程序 app_id
+			// 抖音开放平台 --> 应用详情 --> 支付信息 --> 支付设置 --> 小程序appid
+			'mini_app_id' => '',
+			// 选填-抖音开放平台服务商id
+			'thirdparty_id' => '',
+			// 选填-抖音支付回调地址
+			'notify_url' => '',
+		],
+	],
+	'jsb' => [
+		'default' => [
+			// 服务代码
+			'svr_code' => '',
+			// 必填-合作商ID
+			'partner_id' => '',
+			// 必填-公私钥对编号
+			'public_key_code' => '00',
+			// 必填-商户私钥(加密签名)
+			'mch_secret_cert_path' => '',
+			// 必填-商户公钥证书路径(提供江苏银行进行验证签名用)
+			'mch_public_cert_path' => '',
+			// 必填-江苏银行的公钥(用于解密江苏银行返回的数据)
+			'jsb_public_cert_path' => '',
+			//支付通知地址
+			'notify_url'            => '',
+			// 选填-默认为正常模式。可选为： MODE_NORMAL:正式环境, MODE_SANDBOX:测试环境
+			'mode' => Pay::MODE_NORMAL,
+		]
+	],
     'http' => [ // optional
         'timeout' => 5.0,
         'connect_timeout' => 5.0,
