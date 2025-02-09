@@ -13,12 +13,7 @@ use Yansongda\Pay\Pay;
 
 class PayServiceProvider extends ServiceProvider implements DeferrableProvider
 {
-    /**
-     * Boot the service.
-     *
-     * @author yansongda <me@yansongda.cn>
-     */
-    public function boot()
+    public function boot(): void
     {
         if ($this->app instanceof Application && $this->app->runningInConsole()) {
             $this->publishes([
@@ -32,15 +27,10 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
         }
     }
 
-	/**
-	 * Register the service.
-	 *
-	 * @return void*
-	 * @throws ContainerException
-	 * @author yansongda <me@yansongda.cn>
-	 *
-	 */
-    public function register()
+    /**
+     * @throws ContainerException
+     */
+    public function register(): void
     {
         $this->mergeConfigFrom(dirname(__DIR__).'/config/pay.php', 'pay');
 
@@ -67,14 +57,7 @@ class PayServiceProvider extends ServiceProvider implements DeferrableProvider
 		});
     }
 
-    /**
-     * Get services.
-     *
-     * @author yansongda <me@yansongda.cn>
-     *
-     * @return array
-     */
-    public function provides()
+    public function provides(): array
     {
         return ['pay.alipay', 'pay.wechat', 'pay.unipay', 'pay.douyin', 'pay.jsb'];
     }
