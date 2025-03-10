@@ -13,13 +13,13 @@
         }
     ],
     "require": {
-        "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0",
-        "illuminate/contracts": "^8.0 || ^9.0 || ^10.0 || ^11.0",
+        "illuminate/support": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+        "illuminate/contracts": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
         "yansongda/pay": "~3.7.0"
     },
     "require-dev": {
-        "laravel/framework": "^8.0 || ^9.0 || ^10.0 || ^11.0",
-        "laravel/lumen-framework": "^8.0 || ^9.0 || ^10.0 || ^11.0"
+        "laravel/framework": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0",
+        "laravel/lumen-framework": "^8.0 || ^9.0 || ^10.0 || ^11.0 || ^12.0"
     },
     "autoload": {
         "psr-4": {
